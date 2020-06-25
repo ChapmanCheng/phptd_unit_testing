@@ -13,5 +13,10 @@
             "name": "chapmanCC",
             "email": "chapboy1989@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Listing\\": "classes/"
+        }
+    }
 }
