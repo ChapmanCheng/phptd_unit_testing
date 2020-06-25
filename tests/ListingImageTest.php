@@ -6,9 +6,12 @@
  * Date: 2019-02-01
  * Time: 14:17
  */
-require __DIR__ . '/../classes/ListingBasic.php';
+// ! @deprecated, use namespace to import class \Listing\ListingBasic
+// require __DIR__ . '/../classes/ListingBasic.php';
+
 
 use PHPUnit\Framework\TestCase;
+use Listing\ListingBasic;
 
 class ListingImageTest extends TestCase
 {
@@ -43,15 +46,4 @@ class ListingImageTest extends TestCase
         $listing = new ListingBasic($data);
         $this->assertEquals(BASE_URL . '/' . $data['image'], $listing->getImage());
     }
-
-    // /**
-    //  * TODO: 
-    //  * Add a new image feature using the tests in the 
-    //  * ListingImageTest.php file as a guide. 
-    //  * When the feature has been added properly, all 
-    //  * tests should pass
-    //  */
-    // public function testSomething()
-    // {
-    // }
 }

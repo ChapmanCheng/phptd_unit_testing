@@ -2,7 +2,9 @@
 
 namespace Listing;
 
-class ListingBasic
+use Listing\ListingImage;
+
+class ListingBasic extends ListingImage
 {
     private $id, $title, $website, $email, $twitter;
     protected $status = 'basic';
