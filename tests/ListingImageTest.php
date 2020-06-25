@@ -44,14 +44,14 @@ class ListingImageTest extends TestCase
         $this->assertEquals(BASE_URL . '/' . $data['image'], $listing->getImage());
     }
 
-    /**
-     * TODO: 
-     * Add a new image feature using the tests in the 
-     * ListingImageTest.php file as a guide. 
-     * When the feature has been added properly, all 
-     * tests should pass
-     */
-    public function testSomething()
-    {
-    }
+    // /**
+    //  * TODO: 
+    //  * Add a new image feature using the tests in the 
+    //  * ListingImageTest.php file as a guide. 
+    //  * When the feature has been added properly, all 
+    //  * tests should pass
+    //  */
+    // public function testSomething()
+    // {
+    // }
 }

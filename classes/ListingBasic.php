@@ -1,5 +1,7 @@
 <?php
 
+namespace Listing;
+
 class ListingBasic
 {
     private $id, $title, $website, $email, $twitter;
@@ -12,7 +14,7 @@ class ListingBasic
     public function __construct($data = [])
     {
         if (empty($data)) {
-            throw new Exception('Unable to create a listing, data unavailable');
+            throw new \Exception('Unable to create a listing, data unavailable');
         }
         $this->setValues($data);
     }
@@ -21,13 +23,14 @@ class ListingBasic
      * Calls individual methods to set values for object properties.
      * @param array $data Data to set from user or database
      */
-    public function setValues($data = []) {
+    public function setValues($data = [])
+    {
         if (!isset($data['id'])) {
-            throw new Exception('Unable to create a listing, invalid id');
+            throw new \Exception('Unable to create a listing, invalid id');
         }
         $this->setId($data['id']);
         if (!isset($data['title'])) {
-            throw new Exception('Unable to create a listing, invalid title');
+            throw new \Exception('Unable to create a listing, invalid title');
         }
         $this->setTitle($data['title']);
         if (isset($data['website'])) {

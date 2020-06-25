@@ -1,6 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use \Listing\ListingFeatured;
 
 class ListingFeaturedTest extends TestCase
 {
