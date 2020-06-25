@@ -1,0 +1,8 @@
+<phpunit
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    printerClass="Codedungeon\PHPUnitPrettyResultPrinter\Printer"
+>
+<!-- TODO: Edit the phpunit.xml so that it allows for code coverage report -->
+<!-- Each of the following classes report 100% code coverage: ListingBasic, ListingPremium, and ListingFeatured -->
+</phpunit>
