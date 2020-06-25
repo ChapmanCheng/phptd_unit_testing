@@ -8,16 +8,15 @@ class ListingBasicTest extends TestCase
 
     protected function setUp(): void
     {
-
         $this->data = [
             "id" => "11",
             "title" => "Bulgaria PHP Conference",
-            "description" => "",
+            "description" => null,
             "website" => "http://www.bgphp.org",
             "email" => "conference@bgphp.org",
             "twitter" => "bgphpconf",
             "status" => "basic",
-            "coc" => "",
+            "coc" => null
         ];
     }
     /**
@@ -81,20 +80,15 @@ class ListingBasicTest extends TestCase
      */
     public function toArrayMethodsReturnsExpectedResult()
     {
-        /**
-         * TODO: 
-         * Write a test for the ListingBasic class to ensure 
-         * that the toArray method returns an array where each 
-         * item equals the expected results: id, title, website, email, twitter.
-         */
         $data = $this->data;
         $listing = new ListingBasic($data);
+        $arr = $listing->toArray();
 
-        $expectedKeys = ["id", "title", "website", "email", "twitter"];
-        $filterData = array_filter($data, function ($key) use ($expectedKeys) {
-            return in_array($key, $expectedKeys);
-        }, ARRAY_FILTER_USE_KEY);
-
-        $this->assertEquals($filterData, $listing->toArray());
+        $this->assertEquals($data["id"], $arr["id"]);
+        $this->assertEquals($data["title"], $arr["title"]);
+        $this->assertEquals($data["website"], $arr["website"]);
+        $this->assertEquals($data["email"], $arr["email"]);
+        $this->assertEquals($data["twitter"], $arr["twitter"]);
+        return;
     }
 }
