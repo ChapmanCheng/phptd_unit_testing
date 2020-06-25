@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * TODO:
+ * Write tests for the ListingBasic class to ensure 
+ * that all three Exception messages are returned as expected.
+ * 
  * Write a test for the ListingBasic class to ensure 
  * that getStatus method returns 'basic'.
  * 
@@ -17,7 +21,51 @@ use PHPUnit\Framework\TestCase;
 
 class ListingBasicTest extends TestCase
 {
-    public function testSomething()
+    protected $data;
+
+    protected function setUp(): void
     {
+
+        $this->data = [
+            "id" => "11",
+            "title" => "Bulgaria PHP Conference",
+            "description" => "",
+            "website" => "http://www.bgphp.org",
+            "email" => "conference@bgphp.org",
+            "twitter" => "bgphpconf",
+            "status" => "basic",
+            "coc" => "",
+        ];
+    }
+    /**
+     * @test
+     */
+    public function dataNotProvidedExceptionMessage()
+    {
+        $this->expectExceptionMessage('Unable to create a listing, data unavailable');
+        $data = [];
+        return new ListingBasic($data);
+    }
+
+    /**
+     * @test
+     */
+    public function invalidIdExceptionMessage()
+    {
+        $this->expectExceptionMessage('Unable to create a listing, invalid id');
+        $data = $this->data;
+        $data["id"] = null;
+        return new ListingBasic($data);
+    }
+
+    /**
+     * @test
+     */
+    public function invalidTitleExceptionMessage()
+    {
+        $this->expectErrorMessage('Unable to create a listing, invalid title');
+        $data = $this->data;
+        $data['title'] = null;
+        return new ListingBasic($data);
     }
 }
