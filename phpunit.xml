@@ -3,6 +3,16 @@
     colors="true"
     printerClass="Codedungeon\PHPUnitPrettyResultPrinter\Printer"
 >
-<!-- TODO: Edit the phpunit.xml so that it allows for code coverage report -->
 <!-- Each of the following classes report 100% code coverage: ListingBasic, ListingPremium, and ListingFeatured -->
+
+    <logging>
+        <!-- <log type="coverage-html" target="tests/logs/report" lowUpperBound="35" highLowerBound="70"/>
+        <log type="coverage-clover" target="tests/logs/coverage.xml"/>
+        <log type="coverage-php" target="tests/logs/coverage.serialized"/>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+        <log type="junit" target="tests/logs/logfile.xml"/> -->
+        <log type="testdox-html" target="tests/logs/testdox.html"/>
+        <log type="testdox-text" target="tests/logs/testdox.txt"/>
+    </logging>
+
 </phpunit>
