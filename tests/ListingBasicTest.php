@@ -1,19 +1,5 @@
 <?php
 
-/**
- * TODO: 
- * Write a test for the ListingBasic class to ensure 
- * that getStatus method returns 'basic'.
- * 
- * Write a test for the ListingBasic class to ensure 
- * that the get method for each property is returning 
- * the expected results: id, title, website, email, twitter.
- * 
- * Write a test for the ListingBasic class to ensure 
- * that the toArray method returns an array where each 
- * item equals the expected results: id, title, website, email, twitter.
- */
-
 use PHPUnit\Framework\TestCase;
 
 class ListingBasicTest extends TestCase
@@ -64,5 +50,51 @@ class ListingBasicTest extends TestCase
         $data = $this->data;
         $data['title'] = null;
         return new ListingBasic($data);
+    }
+
+    /**
+     * @test
+     */
+    public function getStatusMethodReturnsBasic()
+    {
+        $listing = new ListingBasic($this->data);
+        return $this->assertEquals('basic', $listing->getStatus());
+    }
+
+    /**
+     * @test
+     */
+    public function getPropertyMethodsReturnsExpectedResult()
+    {
+        $data = $this->data;
+        $listing = new ListingBasic($data);
+        $this->assertEquals($data['id'], $listing->getId());
+        $this->assertEquals($data['title'], $listing->getTitle());
+        $this->assertEquals($data['website'], $listing->getWebsite());
+        $this->assertEquals($data['email'], $listing->getEmail());
+        $this->assertEquals($data['twitter'], $listing->getTwitter());
+        return;
+    }
+
+    /**
+     * @test
+     */
+    public function toArrayMethodsReturnsExpectedResult()
+    {
+        /**
+         * TODO: 
+         * Write a test for the ListingBasic class to ensure 
+         * that the toArray method returns an array where each 
+         * item equals the expected results: id, title, website, email, twitter.
+         */
+        $data = $this->data;
+        $listing = new ListingBasic($data);
+
+        $expectedKeys = ["id", "title", "website", "email", "twitter"];
+        $filterData = array_filter($data, function ($key) use ($expectedKeys) {
+            return in_array($key, $expectedKeys);
+        }, ARRAY_FILTER_USE_KEY);
+
+        $this->assertEquals($filterData, $listing->toArray());
     }
 }
