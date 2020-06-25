@@ -55,7 +55,7 @@ class ListingBasicTest extends TestCase
     /**
      * @test
      */
-    public function getStatusMethodReturnsBasic()
+    public function getstatusMethodReturnsBasic()
     {
         $listing = new ListingBasic($this->data);
         return $this->assertEquals('basic', $listing->getStatus());
@@ -64,7 +64,7 @@ class ListingBasicTest extends TestCase
     /**
      * @test
      */
-    public function getPropertyMethodsReturnsExpectedResult()
+    public function getpropertyMethodsReturnsExpectedResult()
     {
         $data = $this->data;
         $listing = new ListingBasic($data);

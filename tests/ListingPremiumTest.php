@@ -24,7 +24,7 @@ class ListingPremiumTest extends TestCase
     /**
      * @test
      */
-    public function getStatusMethodReturnsPremium()
+    public function getstatusMethodReturnsPremium()
     {
         $expected = "premium";
         $listing = new ListingPremium($this->data);
@@ -34,7 +34,7 @@ class ListingPremiumTest extends TestCase
     /**
      * @test
      */
-    public function getDescriptionReturnsExpectedResult()
+    public function getdescriptionMethodReturnsExpectedResult()
     {
         $expected = $this->data["description"];;
         $listing = new ListingPremium($this->data);

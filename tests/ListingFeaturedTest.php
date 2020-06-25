@@ -32,7 +32,7 @@ class ListingFeaturedTest extends TestCase
     /**
      * @test
      */
-    public function getStatusMethodReturnsFeatured()
+    public function getstatusMethodReturnsFeatured()
     {
         $expected = 'featured';
         $listing = new ListingFeatured($this->data);
@@ -42,7 +42,7 @@ class ListingFeaturedTest extends TestCase
     /**
      * @test
      */
-    public function getCocMethodReturnsExpectedResult()
+    public function getcocMethodReturnsExpectedResult()
     {
         $expected = $this->data["coc"];
         $listing = new ListingFeatured($this->data);
