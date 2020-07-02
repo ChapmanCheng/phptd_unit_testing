@@ -55,6 +55,19 @@ class ListingBasicTest extends TestCase
     /**
      * @test
      */
+    public function objectIsCreatedByPassingMinimum()
+    {
+        $data = [
+            "id" => "11",
+            "title" => "Bulgaria PHP Conference"
+        ];
+        $listing = new ListingBasic($data);
+        return $this->assertInstanceOf(ListingBasic::class, $listing);
+    }
+
+    /**
+     * @test
+     */
     public function getstatusMethodReturnsBasic()
     {
         $listing = new ListingBasic($this->data);
