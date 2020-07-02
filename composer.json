@@ -2,10 +2,12 @@
     "name": "chapman/td6_unit_testing",
     "description": "Treehouse Techdegree PHP Unit-testing project",
     "type": "project",
-    "require": {},
+    "require": {
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.2",
-        "codedungeon/phpunit-result-printer": "^0.28.0"
+        "codedungeon/phpunit-result-printer": "^0.28.0",
+        "phpunit/php-code-coverage": "^8.0"
     },
     "license": "Private",
     "authors": [

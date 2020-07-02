@@ -4,6 +4,9 @@ namespace Listing;
 
 use Listing\ListingImage;
 
+/**
+ * @covers \ListingFeatured
+ */
 class ListingBasic extends ListingImage
 {
     private $id, $title, $website, $email, $twitter;

@@ -4,6 +4,9 @@ namespace Listing;
 
 use \Listing\ListingBasic;
 
+/**
+ * @covers \ListingFeatured
+ */
 class ListingPremium extends ListingBasic
 {
     protected $status = 'premium';
